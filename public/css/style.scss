@@ -1,0 +1,213 @@
+//C:\Users\home\Desktop\atestat info\Bratan Radu - 12 E - Atestat Informatica
+//firebase deploy --only hosting:atestat-info-radu
+//firebase deploy --only hosting:radu-info
+
+/*
+###################################
+########### G L O B A L ###########
+###################################
+*/
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Roboto+Mono:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Major+Mono+Display&family=Roboto+Mono:wght@600&display=swap");
+
+$white: #fff;
+$blue: #70d6ff;
+$black: #000;
+
+::selection {
+  color: $white;
+  background: $blue;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: $white;
+  transition: 0.2s ease-out;
+  overflow: hidden;
+}
+
+/*
+#################################
+########### I N T R O ###########
+#################################
+*/
+@function grid($grid-size) {
+  @return calc(100vw / 24 * #{$grid-size});
+}
+
+.intro-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+
+  .creator {
+    padding: 4rem;
+    filter: url(#distortionFilter);
+    font-size: grid(0.5);
+    color: #0e0e0e;
+    font-family: "Major Mono Display", "Roboto Mono", monospace;
+    opacity: 0;
+  }
+}
+
+svg {
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: -9999px;
+  pointer-events: none;
+}
+
+/*
+###############################
+########### M A I N ###########
+###############################
+*/
+$height: 12vh;
+
+.top-bar {
+  background-color: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+  width: 100vw;
+  height: $height;
+  z-index: 1;
+
+  .name {
+    color: $blue;
+    font-family: "Major Mono Display", "Roboto Mono", monospace;
+    //font-size: 1vmax;
+    font-size: 1em;
+    font-style: bold;
+    width: auto;
+    position: absolute;
+    transform: translateX(-35vw);
+    transition: 0.2s ease-out;
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+
+    &.name-reveal {
+      animation: name-reveal-anim 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+
+    @keyframes name-reveal-anim {
+      0% {
+        transform: translateX(-35vw) translateY(-15vh);
+      }
+      100% {
+        transform: translateX(-35vw) translateY(0);
+      }
+    }
+  }
+
+  .menu {
+    color: $black;
+    font-family: "Roboto Mono", monospace;
+    //font-size: 1vmax;
+    font-size: 1em;
+    font-style: bold;
+    position: absolute;
+    transform: translateX(35vw);
+    text-decoration: none;
+    transition: 0.2s ease-out;
+
+    &:hover {
+      color: $blue;
+      transition: 0.2s ease-out;
+    }
+
+    &.menu-reveal {
+      animation: menu-reveal-anim 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+
+    @keyframes menu-reveal-anim {
+      0% {
+        transform: translateX(35vw) translateY(-15vh);
+      }
+      100% {
+        transform: translateX(35vw) translateY(0);
+      }
+    }
+  }
+}
+
+.page-content {
+  background-color: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh - $height;
+  //padding-top: $height * 1.2;
+  padding-left: 50vw;
+  z-index: 2;
+
+  .chapters {
+    position: relative;
+    color: $black;
+    font-family: "Roboto Mono", monospace;
+    font-size: 6em;
+    font-style: bold;
+    text-decoration: none;
+    margin-top: 0.5vmax;
+    margin-bottom: 0.5vmax;
+    text-align: left;
+    transition: 0.2s ease-out;
+    visibility: hidden;
+    user-select: none;
+    cursor: pointer;
+    
+    //position: absolute;
+    //display: flex;
+    //align-items: center;
+    //justify-content: center;
+    //flex-direction: column;
+
+    &:nth-of-type(1) {
+      margin-top: 0vmax;
+      margin-bottom: 0.5vmax;
+    }
+
+    &:nth-of-type(4) {
+      margin-top: 0.5vmax;
+      margin-bottom: 0vmax;
+    }
+
+    &:hover {
+      color: $white;
+      transition: 0.2s ease-out;
+    }
+
+    &-row {
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

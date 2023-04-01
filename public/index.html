@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atestat Bratan Radu-George</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+  <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+
+</head>
+
+<body>
+  <div class="intro-container">
+    <h1 class="creator">BRATAN RADU-GEORGE</h1>
+    <svg class="distort">
+      <filter id="distortionFilter">
+        <feTurbulence type="fractalNoise" baseFrequency="2.01 .01" numOctaves="5" seed="2" stitchTiles="noStitch" x="0%"
+          y="0%" width="100%" height="100%" result="noise"></feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="B" x="0%"
+          y="0%" width="100%" height="100%" filterUnits="userSpaceOnUse"></feDisplacementMap>
+      </filter>
+    </svg>
+  </div>
+
+  <nav class="top-bar">
+    <a class="name" href="index.html">Bratan Radu George</a>
+    <a class="menu" href="index.html">despre site</a>
+  </nav>
+
+  <main class="page-content">
+    <!--<a class="chapters">
+      <span class="text-wrapper">
+        <span class="letters">Informatica</span>
+      </span>
+    </a>
+    <a class="chapters">
+      <span class="text-wrapper">
+        <span class="letters">Algoritmi</span>
+      </span>
+    </a>
+    <a class="chapters">
+      <span class="text-wrapper">
+        <span class="letters">Backtracking</span>
+      </span>
+    </a>
+    <a class="chapters">
+      <span class="text-wrapper">
+        <span class="letters">Iterativitate</span>
+      </span>
+    </a>-->
+    <div class="chapters" id="chapter1">
+      <div class="chapters-row">
+        <div>Informatica</div>
+      </div>
+    </div>
+    <div class="chapters" id="chapter2">
+      <div class="chapters-row">
+        <div>Algoritmi</div>
+      </div>
+    </div>
+    <div class="chapters" id="chapter3">
+      <div class="chapters-row">
+        <div>Backtracking</div>
+      </div>
+    </div>
+    <div class="chapters" id="chapter4">
+      <div class="chapters-row">
+        <div>Iterativitate</div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/logic.js"></script>
+</body>
+
+</html>
+
+<!-- ----------------------------------- -->
+<!-- metode vechi de incarcare a paginii -->
+<!-- ----------------------------------- -->
+<!-- 
+  <a class="chapters" id="chapter1" onclick="showChapters('chapters/informatica.html')">Informatica</a>
+  <a class="chapters" id="chapter2" onclick="showChapters('chapters/algoritmi.html')">Algoritmi</a>
+  <a class="chapters" id="chapter3" onclick="showChapters('chapters/backtracking.html')">Backtracking</a>
+  <a class="chapters" id="chapter4" onclick="showChapters('chapters/iterativitate.html')">Iterativitate</a>
+
+  <article id="chapter-article"></article>
+-->
